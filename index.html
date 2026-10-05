@@ -360,6 +360,63 @@
   @media (max-width: 860px) { .seasons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 24px; } }
   @media (max-width: 520px) { .seasons { grid-template-columns: 1fr; gap: 28px; } }
 
+  /* An indicative quarter: ten days, coloured by what they're for */
+  .quarter { margin-bottom: 44px; }
+  .quarter .byline { font-size: 14px; max-width: 280px; }
+  .quarter-bar, .quarter-groups {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .quarter-bar .d {
+    height: 36px;
+    display: flex; align-items: flex-end;
+    padding: 0 0 6px 7px;
+    border: 1px solid var(--line-strong);
+    font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+  .quarter-bar .film { background: var(--ink); border-color: var(--ink); color: rgba(255,255,255,0.7); }
+  .quarter-bar .edit { background: var(--ink-soft); border-color: var(--ink-soft); color: rgba(255,255,255,0.7); }
+  .quarter-groups { margin-top: 8px; }
+  .quarter-groups span {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .quarter-groups .g4 { grid-column: span 4; }
+  .quarter-groups .g3 { grid-column: span 3; }
+  .quarter-rows { margin-top: 18px; border-bottom: 1px solid var(--line); }
+  .quarter-row {
+    display: grid;
+    grid-template-columns: 110px 72px minmax(0, 1fr);
+    gap: 18px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .quarter-row dt {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink);
+  }
+  .sw { width: 10px; height: 10px; border: 1px solid var(--line-strong); flex: none; }
+  .sw.film { background: var(--ink); border-color: var(--ink); }
+  .sw.edit { background: var(--ink-soft); border-color: var(--ink-soft); }
+  .quarter-row .q-days { font-size: 12px; color: var(--ink-muted); white-space: nowrap; }
+  .quarter-row .q-desc { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  @media (max-width: 800px) {
+    .quarter .byline { max-width: none; }
+    .quarter-groups { display: none; }
+    .quarter-row { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; }
+    .quarter-row .q-desc { grid-column: 1 / -1; }
+  }
+  @media (max-width: 520px) {
+    .quarter-bar { gap: 3px; }
+    .quarter-bar .d { height: 30px; padding: 0 0 5px 4px; font-size: 8.5px; letter-spacing: 0; }
+  }
+
   .how {
     display: grid;
     grid-template-columns: minmax(0, 0.75fr) minmax(0, 2fr);
@@ -412,6 +469,19 @@
     color: rgba(255,255,255,0.75);
     max-width: 300px;
   }
+  .invest-further {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .invest-further .invest-label { margin-bottom: 8px; }
+  .invest-further-value {
+    font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .invest-further .invest-summary { margin-top: 6px; }
   .invest-list { list-style: none; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.6; margin-top: -4px; }
   .invest-list li { display: flex; gap: 10px; padding: 4px 0; }
   .invest-list li::before { content: "·"; color: rgba(255,255,255,0.4); flex: none; }
@@ -426,8 +496,8 @@
     .invest { grid-template-columns: 1fr; padding: 26px 22px 22px; gap: 20px; }
   }
 
-  .anchor-line { margin-top: 18px; font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
-  .terms-small { margin-top: 10px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); max-width: 780px; }
+  .lead { margin-top: 12px; font-size: clamp(1rem, 1.3vw, 1.1rem); line-height: 1.6; color: var(--ink-soft); max-width: 640px; }
+  .terms-small { margin-top: 18px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); max-width: 780px; }
   .hold { margin-top: 12px; font-size: 13px; line-height: 1.6; font-weight: 500; color: var(--ink); }
 
   .greenlight {
@@ -643,6 +713,52 @@
         </div>
       </div>
 
+      <div class="how quarter">
+        <div>
+          <h3 class="heading-medium">What ten days look like.</h3>
+          <p class="byline">Indicative, to show where the time goes. Autumn leans towards planning and access, summer towards the edit, sound and colour.</p>
+        </div>
+        <div>
+          <div class="quarter-bar" aria-hidden="true">
+            <span class="d">01</span>
+            <span class="d film">02</span><span class="d film">03</span><span class="d film">04</span><span class="d film">05</span>
+            <span class="d">06</span>
+            <span class="d edit">07</span><span class="d edit">08</span><span class="d edit">09</span>
+            <span class="d">10</span>
+          </div>
+          <div class="quarter-groups" aria-hidden="true">
+            <span>Plan</span><span class="g4">Film</span><span>Review</span><span class="g3">Edit</span><span>Share</span>
+          </div>
+          <dl class="quarter-rows">
+            <div class="quarter-row">
+              <dt><i class="sw"></i>Plan</dt>
+              <dd class="q-days">Day 1</dd>
+              <dd class="q-desc">I research, arrange access and set the dates for the quarter.</dd>
+            </div>
+            <div class="quarter-row">
+              <dt><i class="sw film"></i>Film</dt>
+              <dd class="q-days">Days 2–5</dd>
+              <dd class="q-desc">Four days filming with you and the people around you: the moments, places and interviews the season brings.</dd>
+            </div>
+            <div class="quarter-row">
+              <dt><i class="sw"></i>Review</dt>
+              <dd class="q-days">Day 6</dd>
+              <dd class="q-desc">I go through everything we've filmed and note what the story is becoming.</dd>
+            </div>
+            <div class="quarter-row">
+              <dt><i class="sw edit"></i>Edit</dt>
+              <dd class="q-days">Days 7–9</dd>
+              <dd class="q-desc">Scenes are built as we go, so the film grows through the year rather than all at the end.</dd>
+            </div>
+            <div class="quarter-row">
+              <dt><i class="sw"></i>Share</dt>
+              <dd class="q-days">Day 10</dd>
+              <dd class="q-desc">I show you where the film has got to, and we agree what the next quarter needs.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
       <div class="strip strip-timeline">
         <img src="assets/lookbook/timeline-2160.jpg"
              srcset="assets/lookbook/timeline-1440.jpg 1440w, assets/lookbook/timeline-2160.jpg 2160w, assets/lookbook/timeline-2880.jpg 2880w"
@@ -664,11 +780,11 @@
           </div>
           <div class="how-row">
             <dt>Visibility</dt>
-            <dd>I'll track everything and be open with you all the way through. If we're making strong progress or need more time, I'll say so.</dd>
+            <dd>I'll track everything and be open with you all the way through. If we're making strong progress or need more time, I'll say so as it happens.</dd>
           </div>
           <div class="how-row">
             <dt>Beyond Forty Days</dt>
-            <dd>Any further work is discussed and agreed before it's booked.</dd>
+            <dd>The film is planned to fit the forty days. If it needs more, we agree that before anything is booked, at half my day rate.</dd>
           </div>
         </dl>
       </div>
@@ -693,6 +809,7 @@
 
       <div class="scene-header">
         <h2 class="heading-large">The investment.</h2>
+        <p class="lead">My day rate is £1,000, which would put forty days at £40,000. I want to make this film, so the year is £30,000 and any further days are half my rate.</p>
       </div>
 
       <div class="invest">
@@ -700,6 +817,11 @@
           <div class="invest-label">The Year · Forty Days</div>
           <div class="invest-amount">£30,000</div>
           <p class="invest-summary">Four payments of £7,500, one at the start of each quarter.</p>
+          <div class="invest-further">
+            <div class="invest-label">Further Days</div>
+            <div class="invest-further-value">£500 a day</div>
+            <p class="invest-summary">Half my day rate, agreed with you before they're booked.</p>
+          </div>
         </div>
         <div>
           <div class="invest-label">Includes</div>
@@ -712,8 +834,7 @@
         <div class="invest-terms">Pay by bank transfer or card, whichever's easier.</div>
       </div>
 
-      <p class="anchor-line">At my usual rate, forty days would be £40,000.</p>
-      <p class="terms-small">Further days, if we need them, are at half my usual rate and agreed before they're booked. Travel costs, accommodation, specialist crew, licensed material and festival entry fees are separate, and each is agreed with you before it's spent. Crowdfunding will help finance the film, but the quarterly payments don't depend on it.</p>
+      <p class="terms-small">Travel costs, accommodation, specialist crew, licensed material and festival entry fees are separate, and each is agreed with you before it's spent. Crowdfunding will help finance the film, but the quarterly payments don't depend on it.</p>
       <p class="hold">This holds until 12pm Friday 16 October, so I can reserve the autumn days.</p>
 
       <div class="greenlight">
