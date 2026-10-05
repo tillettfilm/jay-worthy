@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jay Worthy · A Four-Season Documentary · Tillett Film</title>
+<title>Jay Worthy · A Four Season Documentary · Tillett Film</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="A four-season documentary, planned for Jay Worthy by Tillett Film.">
-<meta property="og:title" content="Jay Worthy · A Four-Season Documentary · Tillett Film">
-<meta property="og:description" content="A four-season documentary, planned for Jay Worthy by Tillett Film.">
+<meta name="description" content="A four season documentary, planned for Jay Worthy by Tillett Film.">
+<meta property="og:title" content="Jay Worthy · A Four Season Documentary · Tillett Film">
+<meta property="og:description" content="A four season documentary, planned for Jay Worthy by Tillett Film.">
 <meta property="og:image" content="https://tillettfilm.github.io/jay-worthy/assets/shared/og.jpg">
 <meta property="og:url" content="https://tillettfilm.github.io/jay-worthy/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jay Worthy · A Four-Season Documentary · Tillett Film">
+<meta name="twitter:title" content="Jay Worthy · A Four Season Documentary · Tillett Film">
 <meta name="twitter:image" content="https://tillettfilm.github.io/jay-worthy/assets/shared/og.jpg">
 <link rel="preload" as="image" href="assets/jay/panel-2160.jpg" imagesrcset="assets/jay/panel-1440.jpg 1440w, assets/jay/panel-2160.jpg 2160w, assets/jay/panel-2880.jpg 2880w" imagesizes="(max-width: 1100px) 100vw, 1040px">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -290,8 +290,8 @@
   .note { border-left: 1px solid var(--line-strong); padding-left: 28px; }
   .note p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); }
   .note p + p { margin-top: 10px; }
-  .note .note-salute { font-weight: 600; color: var(--ink); margin-bottom: 12px; }
-  .note .note-sign { font-weight: 600; color: var(--ink); margin-top: 14px; }
+  .note .note-salute { margin-bottom: 12px; }
+  .note .note-sign { margin-top: 14px; }
 
   .slate {
     margin-top: 34px;
@@ -494,23 +494,19 @@
     text-align: center;
   }
   .closing.visible { display: flex; }
+  /* A hard cut to the strip, then the thank-you comes up like an end title */
   .closing-portrait {
     width: min(var(--measure), 100%);
-    aspect-ratio: 2.6 / 1;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 80%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 80%, transparent 100%);
-    opacity: 0;
+    aspect-ratio: 2.8 / 1;
+    overflow: hidden;
+    background: #0a0a0a;
   }
   .closing-portrait img {
     width: 100%; height: 100%;
     object-fit: cover; object-position: 30% 40%;
     display: block;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 68%, transparent 100%);
-            mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 68%, transparent 100%);
   }
   .closing-text { opacity: 0; margin-top: 36px; }
-  /* Black for a beat, then the portrait and thank-you come up together */
-  .closing.visible .closing-portrait,
   .closing.visible .closing-text { animation: closingIn 1.4s ease 1s both; }
   @keyframes closingIn { from { opacity: 0; } to { opacity: 1; } }
   .closing-tagline {
@@ -528,13 +524,13 @@
     letter-spacing: 0.28em; text-transform: uppercase;
   }
   @media (max-width: 700px) {
-    .closing-portrait { aspect-ratio: 1.7 / 1; }
+    .closing-portrait { aspect-ratio: 2 / 1; }
     .closing-portrait img { object-position: 38% 40%; }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .scene.active { animation: none; }
-    .closing.visible .closing-portrait, .closing.visible .closing-text { animation: none; opacity: 1; }
+    .closing.visible .closing-text { animation: none; opacity: 1; }
   }
 </style>
 </head>
@@ -559,20 +555,20 @@
              srcset="assets/jay/panel-1440.jpg 1440w, assets/jay/panel-2160.jpg 2160w, assets/jay/panel-2880.jpg 2880w"
              sizes="(max-width: 1100px) 100vw, 1040px"
              alt="Jay Worthy speaking on a panel at PerformX" fetchpriority="high">
-        <div class="strip-caption">Shot by Charlie Tillett · PerformX</div>
+        <div class="strip-caption">Myzone at PerformX</div>
       </div>
 
       <div class="cover-grid">
         <div>
           <h1 class="cover-title">Jay Worthy.</h1>
-          <p class="cover-sub">A four-season documentary.</p>
+          <p class="cover-sub">A four season documentary.</p>
           <p class="cover-tagline">A personal film exploring nature and performance across a year.</p>
         </div>
 
         <div class="note">
-          <p class="note-salute">Jay,</p>
-          <p>Here's the plan for the year, kept to three pages.</p>
-          <p>I've set aside forty days for your film. A year gives the story room to change, so we'll decide together how to spend them, one season at a time.</p>
+          <p class="note-salute">Hi Jay,</p>
+          <p>I've created a plan for us.</p>
+          <p>I've set aside forty days for your film. A year gives the story room to change, so we'll decide together how to spend them one season at a time.</p>
           <p class="note-sign">Charlie</p>
         </div>
       </div>
@@ -620,7 +616,7 @@
         <div class="season">
           <div class="season-q">Quarter One</div>
           <div class="season-name">Autumn</div>
-          <p class="season-desc">Develop the story, arrange access and film the first scenes. We may use some of this quarter's time to make a short crowdfunding teaser.</p>
+          <p class="season-desc">Develop the story, arrange access and film the first scenes. We may use some of this quarter's time to make a short teaser.</p>
           <div class="ticks" aria-hidden="true"></div>
           <div class="ticks-label">10 days</div>
         </div>
@@ -668,11 +664,7 @@
           </div>
           <div class="how-row">
             <dt>Visibility</dt>
-            <dd>I keep a shared record: dates worked, what was done, days used and days remaining.</dd>
-          </div>
-          <div class="how-row">
-            <dt>Carry-over</dt>
-            <dd>Unused days in a quarter carry into later quarters.</dd>
+            <dd>I'll track everything and be open with you all the way through. If we're making strong progress or need more time, I'll say so.</dd>
           </div>
           <div class="how-row">
             <dt>Beyond Forty Days</dt>
@@ -696,7 +688,7 @@
              srcset="assets/jay/myzone-1440.jpg 1440w, assets/jay/myzone-2160.jpg 2160w, assets/jay/myzone-2880.jpg 2880w"
              sizes="(max-width: 1100px) 100vw, 1040px"
              alt="Jay Worthy at the Myzone stand, PerformX">
-        <div class="strip-caption">Shot by Charlie Tillett · PerformX</div>
+        <div class="strip-caption">Myzone at PerformX</div>
       </div>
 
       <div class="scene-header">
@@ -714,15 +706,14 @@
           <ul class="invest-list">
             <li>The finished 17-minute film</li>
             <li>Forty days across research, planning, travel, filming, footage review and editing</li>
-            <li>A shared record of the days used and remaining</li>
-            <li>An optional crowdfunding teaser, drawn from the forty days</li>
+            <li>An optional teaser, drawn from the forty days</li>
           </ul>
         </div>
         <div class="invest-terms">Pay by bank transfer or card, whichever's easier.</div>
       </div>
 
       <p class="anchor-line">At my usual rate, forty days would be £40,000.</p>
-      <p class="terms-small">Further days, if we need them, are at my usual rate and agreed before they're booked. Travel costs, accommodation, specialist crew, licensed material and festival entry fees are separate, and each is agreed with you before it's spent. Crowdfunding may help finance the film, but the quarterly payments don't depend on it.</p>
+      <p class="terms-small">Further days, if we need them, are at half my usual rate and agreed before they're booked. Travel costs, accommodation, specialist crew, licensed material and festival entry fees are separate, and each is agreed with you before it's spent. Crowdfunding will help finance the film, but the quarterly payments don't depend on it.</p>
       <p class="hold">This holds until 12pm Friday 16 October, so I can reserve the autumn days.</p>
 
       <div class="greenlight">
@@ -916,8 +907,8 @@
   // Greenlight
   const FORMSPREE_ID = 'mzdqwzzn';
   const signBtn = document.getElementById('signBtn');
-  const PROJECT = 'Four-season documentary · £30,000';
-  const MESSAGE = "Jay Worthy has greenlighted the four-season documentary (£30,000, paid £7,500 a quarter). Send the first quarter's invoice.";
+  const PROJECT = 'Four season documentary · £30,000';
+  const MESSAGE = "Jay Worthy has greenlighted the four season documentary (£30,000, paid £7,500 a quarter). Send the first quarter's invoice.";
 
   // If the endpoint is unset or the POST fails, fall back to a prefilled email so a
   // greenlight is never silently lost.
