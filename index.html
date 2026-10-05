@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jay Worthy · A Four-Season Documentary · Tillett Film</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A four-season documentary, planned for Jay Worthy by Tillett Film.">
+<meta property="og:title" content="Jay Worthy · A Four-Season Documentary · Tillett Film">
+<meta property="og:description" content="A four-season documentary, planned for Jay Worthy by Tillett Film.">
+<meta property="og:image" content="https://tillettfilm.github.io/jay-worthy/assets/shared/og.jpg">
+<meta property="og:url" content="https://tillettfilm.github.io/jay-worthy/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jay Worthy · A Four-Season Documentary · Tillett Film">
+<meta name="twitter:image" content="https://tillettfilm.github.io/jay-worthy/assets/shared/og.jpg">
+<link rel="preload" as="image" href="assets/jay/panel-2160.jpg" imagesrcset="assets/jay/panel-1440.jpg 1440w, assets/jay/panel-2160.jpg 2160w, assets/jay/panel-2880.jpg 2880w" imagesizes="(max-width: 1100px) 100vw, 1040px">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================
+     Tillett Film · Jay Worthy
+     The First Cut, condensed to three acts.
+     ========================================================= */
+
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f5f4f1;
+    --bg-invert: #0a0a0a;
+    --ink: #0a0a0a;
+    --ink-soft: #5a5a58;
+    --ink-muted: #8a8a86;
+    --line: rgba(10,10,10,0.10);
+    --line-strong: rgba(10,10,10,0.20);
+    --line-invert: rgba(255,255,255,0.14);
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --measure: 1040px;
+  }
+
+  html, body { height: 100%; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.55;
+    overflow: hidden;
+  }
+
+  .label-caps {
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink-muted);
+  }
+  .heading-large {
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .heading-medium {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  .byline {
+    margin-top: 10px;
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  /* ===== Top bar ===== */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .brandmark {
+    font-size: 13px; font-weight: 600;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .scene-pill {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding: 8px 16px;
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+  }
+  @media (max-width: 600px) {
+    .topbar { padding: 14px 18px; }
+    .brandmark { font-size: 12px; }
+    .scene-pill { font-size: 10px; padding: 6px 12px; }
+  }
+
+  /* ===== Bottom navigation ===== */
+  .bottombar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-top: 1px solid var(--line-strong);
+    padding: 16px 32px 18px;
+  }
+  .step-indicator {
+    display: flex; justify-content: center; align-items: center;
+    gap: 10px; margin-bottom: 12px;
+  }
+  .step-dot {
+    appearance: none;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink-muted);
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    font-family: var(--sans);
+  }
+  .step-dot:hover { transform: scale(1.1); }
+  .step-dot.passed { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .step-dot.active {
+    background: var(--ink); color: #fff; border-color: var(--ink);
+    width: 34px; height: 34px;
+    font-size: 11px;
+    box-shadow: 0 0 0 3px rgba(10,10,10,0.06);
+  }
+  .step-divider { flex: 0 0 28px; height: 1px; background: var(--line-strong); }
+
+  .bottombar-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 18px; max-width: 1300px; margin: 0 auto;
+  }
+  .nav-tag {
+    font-size: 12px; font-weight: 500;
+    color: var(--ink-soft); line-height: 1.35;
+  }
+  .nav-tag strong {
+    color: var(--ink); font-weight: 700;
+    display: block; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .nav-buttons { display: flex; gap: 10px; flex-shrink: 0; }
+  .nav-btn {
+    appearance: none; background: transparent;
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 11px 22px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-btn:hover:not(:disabled) { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-btn.primary { background: var(--ink); color: #fff; border-color: var(--ink); padding: 11px 26px; }
+  .nav-btn.primary:hover:not(:disabled) { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .nav-btn .nav-btn-arrow { display: inline-block; margin-left: 8px; transition: transform 0.25s ease; }
+  .nav-btn:hover:not(:disabled) .nav-btn-arrow { transform: translateX(3px); }
+
+  @media (max-width: 800px) {
+    .bottombar { padding: 12px 16px 14px; }
+    .step-indicator { gap: 8px; margin-bottom: 10px; }
+    .step-dot { width: 22px; height: 22px; font-size: 9px; }
+    .step-dot.active { width: 30px; height: 30px; font-size: 10px; }
+    .step-divider { flex: 0 0 18px; }
+    .bottombar-inner { flex-direction: column; gap: 10px; align-items: stretch; }
+    .nav-tag { text-align: center; font-size: 11px; }
+    .nav-tag strong { font-size: 11px; margin-bottom: 1px; }
+    .nav-buttons { width: 100%; gap: 8px; }
+    .nav-btn { flex: 1; padding: 13px 14px; font-size: 10px; letter-spacing: 0.14em; }
+    .nav-btn.primary { flex: 1.6; padding: 13px 16px; }
+  }
+
+  /* ===== Scenes ===== */
+  .scenes { position: relative; width: 100%; height: 100vh; height: 100dvh; }
+  .scene {
+    position: absolute; inset: 0;
+    display: none;
+    overflow-y: scroll; overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    padding: 92px 32px 0;
+    flex-direction: column;
+  }
+  .scene::after { content: ""; display: block; flex: none; height: var(--scene-pad-bottom, 220px); }
+  @media (max-width: 700px) { .scene { padding: 76px 18px 0; } }
+  .scene.active {
+    display: flex;
+    animation: sceneIn 0.7s cubic-bezier(.4,0,.2,1);
+  }
+  @keyframes sceneIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .scene-inner { width: 100%; max-width: var(--measure); margin: 0 auto; }
+  .act-label { margin-bottom: 16px; }
+  .scene-header { margin-bottom: 30px; }
+
+  .scene::-webkit-scrollbar { width: 6px; }
+  .scene::-webkit-scrollbar-track { background: transparent; }
+  .scene::-webkit-scrollbar-thumb { background: rgba(10,10,10,0.15); border-radius: 3px; }
+
+  /* ===== Strips · photographs and film, letterboxed ===== */
+  .strip {
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
+    aspect-ratio: 24 / 7;
+    margin-bottom: 30px;
+  }
+  .strip img, .strip video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .strip::after {
+    content: "";
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0) 34%);
+    pointer-events: none;
+  }
+  .strip-caption {
+    position: absolute; left: 16px; bottom: 13px; z-index: 2;
+    font-size: 8.5px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+    pointer-events: none;
+  }
+  .strip-panel img    { object-position: 63% 35%; }
+  .strip-myzone img   { object-position: 46% 30%; }
+  .strip-timeline img { object-position: 40% 50%; }
+
+  @media (max-width: 700px) {
+    .strip { aspect-ratio: 2 / 1; margin-bottom: 24px; }
+    .strip-caption { font-size: 7px; left: 11px; bottom: 9px; letter-spacing: 0.12em; }
+  }
+
+  /* ===== ACT 01 · OPENING CREDITS ===== */
+  .cover-inner { margin-top: auto !important; margin-bottom: auto !important; }
+  .cover-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 56px;
+    align-items: end;
+  }
+  .cover-title {
+    font-size: clamp(2.5rem, 5.6vw, 4.1rem);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+    margin-bottom: 14px;
+  }
+  .cover-sub {
+    font-size: clamp(1.15rem, 1.9vw, 1.45rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .cover-tagline {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 400px;
+  }
+
+  .note { border-left: 1px solid var(--line-strong); padding-left: 28px; }
+  .note p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); }
+  .note p + p { margin-top: 10px; }
+  .note .note-salute { font-weight: 600; color: var(--ink); margin-bottom: 12px; }
+  .note .note-sign { font-weight: 600; color: var(--ink); margin-top: 14px; }
+
+  .slate {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .slate-item { padding: 14px 20px 14px 0; border-right: 1px solid var(--line); }
+  .slate-item + .slate-item { padding-left: 20px; }
+  .slate-item:last-child { border-right: none; }
+  .slate-label {
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 6px;
+  }
+  .slate-value { font-size: 14px; font-weight: 600; color: var(--ink); }
+
+  @media (max-width: 800px) {
+    .cover-grid { grid-template-columns: 1fr; gap: 26px; }
+    .note { border-left: none; padding-left: 0; border-top: 1px solid var(--line-strong); padding-top: 22px; }
+    .slate { grid-template-columns: 1fr 1fr; }
+    .slate-item:nth-child(2n) { border-right: none; }
+    .slate-item:nth-child(2n+1) { padding-left: 0; }
+    .slate-item:nth-child(1), .slate-item:nth-child(2) { border-bottom: 1px solid var(--line); }
+  }
+
+  /* ===== ACT 02 · THE YEAR ===== */
+  .seasons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+    margin-bottom: 44px;
+  }
+  .season {
+    display: flex; flex-direction: column;
+    border-top: 2px solid var(--ink);
+    padding-top: 14px;
+  }
+  .season-q {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .season-name {
+    font-size: clamp(1.3rem, 1.9vw, 1.55rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .season-desc { font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 20px; }
+  .ticks { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; height: 18px; }
+  .ticks i { display: block; width: 1px; height: 55%; background: var(--ink); }
+  .ticks i:first-child { height: 100%; }
+  .ticks-label {
+    margin-top: 8px;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  @media (max-width: 860px) { .seasons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 24px; } }
+  @media (max-width: 520px) { .seasons { grid-template-columns: 1fr; gap: 28px; } }
+
+  .how {
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 2fr);
+    gap: 40px;
+  }
+  .how-rows { border-bottom: 1px solid var(--line); }
+  .how-row {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 24px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+  }
+  .how-row dt {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-muted);
+    padding-top: 3px;
+  }
+  .how-row dd { font-size: 14px; line-height: 1.55; color: var(--ink); }
+  @media (max-width: 800px) {
+    .how { grid-template-columns: 1fr; gap: 16px; }
+    .how-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ===== ACT 03 · GREENLIGHT ===== */
+  .invest {
+    background: var(--bg-invert);
+    color: #fff;
+    padding: 34px 36px 26px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 22px 48px;
+  }
+  .invest-label {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+  .invest-amount {
+    font-size: clamp(2.7rem, 5.4vw, 3.9rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .invest-summary {
+    margin-top: 12px;
+    font-size: 14px; line-height: 1.55;
+    color: rgba(255,255,255,0.75);
+    max-width: 300px;
+  }
+  .invest-list { list-style: none; color: rgba(255,255,255,0.88); font-size: 13.5px; line-height: 1.6; margin-top: -4px; }
+  .invest-list li { display: flex; gap: 10px; padding: 4px 0; }
+  .invest-list li::before { content: "·"; color: rgba(255,255,255,0.4); flex: none; }
+  .invest-terms {
+    grid-column: 1 / -1;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 16px;
+    font-size: 11px; letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.55);
+  }
+  @media (max-width: 760px) {
+    .invest { grid-template-columns: 1fr; padding: 26px 22px 22px; gap: 20px; }
+  }
+
+  .anchor-line { margin-top: 18px; font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+  .terms-small { margin-top: 10px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); max-width: 780px; }
+  .hold { margin-top: 12px; font-size: 13px; line-height: 1.6; font-weight: 500; color: var(--ink); }
+
+  .greenlight {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+  }
+  .agreement-quote {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    margin-bottom: 22px;
+  }
+  .agreement-steps {
+    display: grid; gap: 10px;
+    padding: 16px 0;
+    margin-bottom: 26px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .agreement-step { display: flex; align-items: baseline; gap: 16px; font-size: 14px; line-height: 1.45; }
+  .agreement-step-num {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--ink-muted);
+    flex-shrink: 0; width: 28px;
+  }
+  .gl-row { display: flex; align-items: center; justify-content: space-between; gap: 22px; flex-wrap: wrap; }
+  .btn-cta {
+    display: inline-block;
+    padding: 15px 32px;
+    background: var(--ink); color: #fff;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: all 0.25s ease;
+  }
+  .btn-cta:hover { background: transparent; color: var(--ink); }
+  .btn-cta:disabled { opacity: 0.35; cursor: not-allowed; }
+  .signature { display: flex; align-items: center; gap: 14px; }
+  .signature-mark {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--ink); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600;
+  }
+  .signature-name { font-size: 14px; font-weight: 600; }
+  .signature-role { font-size: 12px; color: var(--ink-muted); }
+  @media (max-width: 600px) {
+    .gl-row { flex-direction: column; align-items: stretch; }
+    .btn-cta { width: 100%; text-align: center; }
+  }
+
+  /* ===== CLOSING SCREEN ===== */
+  .closing {
+    position: fixed; inset: 0; z-index: 1000;
+    background: #000;
+    display: none;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: 30px;
+    text-align: center;
+  }
+  .closing.visible { display: flex; }
+  .closing-portrait {
+    width: min(var(--measure), 100%);
+    aspect-ratio: 2.6 / 1;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 80%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 20%, #000 80%, transparent 100%);
+    opacity: 0;
+  }
+  .closing-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: 30% 40%;
+    display: block;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 68%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 68%, transparent 100%);
+  }
+  .closing-text { opacity: 0; margin-top: 36px; }
+  /* Black for a beat, then the portrait and thank-you come up together */
+  .closing.visible .closing-portrait,
+  .closing.visible .closing-text { animation: closingIn 1.4s ease 1s both; }
+  @keyframes closingIn { from { opacity: 0; } to { opacity: 1; } }
+  .closing-tagline {
+    color: #fff;
+    font-size: clamp(2rem, 5.6vw, 4.4rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 26px;
+  }
+  .closing-rule { width: 60px; height: 1px; background: rgba(255,255,255,0.4); margin: 0 auto 26px; }
+  .closing-sub {
+    color: rgba(255,255,255,0.55);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.28em; text-transform: uppercase;
+  }
+  @media (max-width: 700px) {
+    .closing-portrait { aspect-ratio: 1.7 / 1; }
+    .closing-portrait img { object-position: 38% 40%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scene.active { animation: none; }
+    .closing.visible .closing-portrait, .closing.visible .closing-text { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="brandmark">Tillett Film</div>
+  <div class="scene-pill" id="scenePill">Act 01 · Opening Credits</div>
+</div>
+
+<!-- ============ SCENES ============ -->
+<div class="scenes">
+
+  <!-- ====== ACT 01 · OPENING CREDITS ====== -->
+  <section class="scene active" data-scene="cover" data-title="Opening Credits">
+    <div class="scene-inner cover-inner">
+      <div class="label-caps act-label">A Tillett Film Production</div>
+
+      <div class="strip strip-panel">
+        <img src="assets/jay/panel-2160.jpg"
+             srcset="assets/jay/panel-1440.jpg 1440w, assets/jay/panel-2160.jpg 2160w, assets/jay/panel-2880.jpg 2880w"
+             sizes="(max-width: 1100px) 100vw, 1040px"
+             alt="Jay Worthy speaking on a panel at PerformX" fetchpriority="high">
+        <div class="strip-caption">Shot by Charlie Tillett · PerformX</div>
+      </div>
+
+      <div class="cover-grid">
+        <div>
+          <h1 class="cover-title">Jay Worthy.</h1>
+          <p class="cover-sub">A four-season documentary.</p>
+          <p class="cover-tagline">A personal film exploring nature and performance across a year.</p>
+        </div>
+
+        <div class="note">
+          <p class="note-salute">Jay,</p>
+          <p>Here's the plan for the year, kept to three pages.</p>
+          <p>I've set aside forty days for your film. A year gives the story room to change, so we'll decide together how to spend them, one season at a time.</p>
+          <p class="note-sign">Charlie</p>
+        </div>
+      </div>
+
+      <div class="slate">
+        <div class="slate-item">
+          <div class="slate-label">Run Time</div>
+          <div class="slate-value">17 minutes</div>
+        </div>
+        <div class="slate-item">
+          <div class="slate-label">Filmed</div>
+          <div class="slate-value">Autumn to Summer</div>
+        </div>
+        <div class="slate-item">
+          <div class="slate-label">Director</div>
+          <div class="slate-value">Charlie Tillett</div>
+        </div>
+        <div class="slate-item">
+          <div class="slate-label">Prepared</div>
+          <div class="slate-value">5 October 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ACT 02 · THE YEAR ====== -->
+  <section class="scene" data-scene="year" data-title="The Year">
+    <div class="scene-inner">
+      <div class="label-caps act-label">Act 02 · The Year</div>
+
+      <div class="strip strip-video">
+        <video id="loopFilm" muted loop playsinline preload="none" aria-hidden="true"
+               poster="assets/lookbook/looping-film-poster.jpg"
+               data-src-hd="assets/lookbook/looping-film-1920.mp4"
+               data-src-sd="assets/lookbook/looping-film-1280.mp4"></video>
+        <div class="strip-caption">Recent work · Tillett Film</div>
+      </div>
+
+      <div class="scene-header">
+        <h2 class="heading-large">One year, four seasons.</h2>
+        <p class="byline">A working outline, not a fixed script.</p>
+      </div>
+
+      <div class="seasons">
+        <div class="season">
+          <div class="season-q">Quarter One</div>
+          <div class="season-name">Autumn</div>
+          <p class="season-desc">Develop the story, arrange access and film the first scenes. We may use some of this quarter's time to make a short crowdfunding teaser.</p>
+          <div class="ticks" aria-hidden="true"></div>
+          <div class="ticks-label">10 days</div>
+        </div>
+        <div class="season">
+          <div class="season-q">Quarter Two</div>
+          <div class="season-name">Winter</div>
+          <p class="season-desc">Continue filming and interviews. Review what is emerging and refine the questions.</p>
+          <div class="ticks" aria-hidden="true"></div>
+          <div class="ticks-label">10 days</div>
+        </div>
+        <div class="season">
+          <div class="season-q">Quarter Three</div>
+          <div class="season-name">Spring</div>
+          <p class="season-desc">Follow new developments, film further scenes and begin assembling the film.</p>
+          <div class="ticks" aria-hidden="true"></div>
+          <div class="ticks-label">10 days</div>
+        </div>
+        <div class="season">
+          <div class="season-q">Quarter Four</div>
+          <div class="season-name">Summer</div>
+          <p class="season-desc">Film the final scenes, finish the edit, sound and colour, then deliver the film.</p>
+          <div class="ticks" aria-hidden="true"></div>
+          <div class="ticks-label">10 days</div>
+        </div>
+      </div>
+
+      <div class="strip strip-timeline">
+        <img src="assets/lookbook/timeline-2160.jpg"
+             srcset="assets/lookbook/timeline-1440.jpg 1440w, assets/lookbook/timeline-2160.jpg 2160w, assets/lookbook/timeline-2880.jpg 2880w"
+             sizes="(max-width: 1100px) 100vw, 1040px"
+             alt="A Premiere Pro timeline mid-edit">
+        <div class="strip-caption">In the edit</div>
+      </div>
+
+      <div class="how">
+        <h3 class="heading-medium">How we work.</h3>
+        <dl class="how-rows">
+          <div class="how-row">
+            <dt>Time</dt>
+            <dd>I reserve ten working days each quarter, forty across the year.</dd>
+          </div>
+          <div class="how-row">
+            <dt>Each Quarter</dt>
+            <dd>At the start of each quarter we agree how to spend the days across research, planning, travel, filming, footage review and editing. The balance can change as the story develops.</dd>
+          </div>
+          <div class="how-row">
+            <dt>Visibility</dt>
+            <dd>I keep a shared record: dates worked, what was done, days used and days remaining.</dd>
+          </div>
+          <div class="how-row">
+            <dt>Carry-over</dt>
+            <dd>Unused days in a quarter carry into later quarters.</dd>
+          </div>
+          <div class="how-row">
+            <dt>Beyond Forty Days</dt>
+            <dd>Any further work is discussed and agreed before it's booked.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ACT 03 · GREENLIGHT ======
+       From the documentary plan, 5 October 2026.
+       Confirm before sending: the hold date (Fri 16 Oct) and that each
+       £7,500 falls due at the start of its quarter. -->
+  <section class="scene" data-scene="greenlight" data-title="Greenlight">
+    <div class="scene-inner">
+      <div class="label-caps act-label">Act 03 · Greenlight</div>
+
+      <div class="strip strip-myzone">
+        <img src="assets/jay/myzone-2160.jpg"
+             srcset="assets/jay/myzone-1440.jpg 1440w, assets/jay/myzone-2160.jpg 2160w, assets/jay/myzone-2880.jpg 2880w"
+             sizes="(max-width: 1100px) 100vw, 1040px"
+             alt="Jay Worthy at the Myzone stand, PerformX">
+        <div class="strip-caption">Shot by Charlie Tillett · PerformX</div>
+      </div>
+
+      <div class="scene-header">
+        <h2 class="heading-large">The investment.</h2>
+      </div>
+
+      <div class="invest">
+        <div>
+          <div class="invest-label">The Year · Forty Days</div>
+          <div class="invest-amount">£30,000</div>
+          <p class="invest-summary">Four payments of £7,500, one at the start of each quarter.</p>
+        </div>
+        <div>
+          <div class="invest-label">Includes</div>
+          <ul class="invest-list">
+            <li>The finished 17-minute film</li>
+            <li>Forty days across research, planning, travel, filming, footage review and editing</li>
+            <li>A shared record of the days used and remaining</li>
+            <li>An optional crowdfunding teaser, drawn from the forty days</li>
+          </ul>
+        </div>
+        <div class="invest-terms">Pay by bank transfer or card, whichever's easier.</div>
+      </div>
+
+      <p class="anchor-line">At my usual rate, forty days would be £40,000.</p>
+      <p class="terms-small">Further days, if we need them, are at my usual rate and agreed before they're booked. Travel costs, accommodation, specialist crew, licensed material and festival entry fees are separate, and each is agreed with you before it's spent. Crowdfunding may help finance the film, but the quarterly payments don't depend on it.</p>
+      <p class="hold">This holds until 12pm Friday 16 October, so I can reserve the autumn days.</p>
+
+      <div class="greenlight">
+        <p class="agreement-quote">Press Greenlight. That is the paperwork.</p>
+        <div class="agreement-steps">
+          <div class="agreement-step"><span class="agreement-step-num">01</span><span>I send the first quarter's invoice.</span></div>
+          <div class="agreement-step"><span class="agreement-step-num">02</span><span>We agree how to spend autumn's ten days.</span></div>
+        </div>
+        <div class="gl-row">
+          <button type="button" class="btn-cta" id="signBtn">Greenlight the Film →</button>
+          <div class="signature">
+            <div class="signature-mark">CT</div>
+            <div>
+              <div class="signature-name">Charlie Tillett</div>
+              <div class="signature-role">Director · Tillett Film</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ BOTTOM NAV ============ -->
+<div class="bottombar" id="bottombar">
+  <div class="step-indicator">
+    <button class="step-dot active" data-step="0" aria-label="Act 1">01</button>
+    <span class="step-divider"></span>
+    <button class="step-dot" data-step="1" aria-label="Act 2">02</button>
+    <span class="step-divider"></span>
+    <button class="step-dot" data-step="2" aria-label="Act 3">03</button>
+  </div>
+  <div class="bottombar-inner">
+    <div class="nav-tag" id="navTag"><strong>Act 01 of 03</strong>two acts to greenlight</div>
+    <div class="nav-buttons">
+      <button class="nav-btn" id="prevBtn" disabled>Back</button>
+      <button class="nav-btn primary" id="nextBtn">Next: The Year <span class="nav-btn-arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CLOSING SCREEN ============ -->
+<div class="closing" id="closing" aria-live="polite">
+  <div class="closing-portrait">
+    <img src="assets/jay/profile-2160.jpg"
+         srcset="assets/jay/profile-1440.jpg 1440w, assets/jay/profile-2160.jpg 2160w, assets/jay/profile-2880.jpg 2880w"
+         sizes="(max-width: 1100px) 100vw, 1040px"
+         alt="Jay Worthy in profile">
+  </div>
+  <div class="closing-text">
+    <div class="closing-tagline">Thank you,<br>Jay Worthy.</div>
+    <div class="closing-rule"></div>
+    <div class="closing-sub">Charlie Tillett · Tillett Film</div>
+  </div>
+</div>
+
+<script>
+  const scenes = Array.from(document.querySelectorAll('.scene'));
+  const total = scenes.length;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const tag = document.getElementById('navTag');
+  const pill = document.getElementById('scenePill');
+  const bottombar = document.getElementById('bottombar');
+  const stepDots = Array.from(document.querySelectorAll('.step-dot'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+
+  const numberWords = ['zero','one','two','three','four','five','six','seven','eight','nine'];
+  function pad(n) { return String(n).padStart(2,'0'); }
+
+  function updateChrome(i) {
+    const title = scenes[i].dataset.title || '';
+    const remaining = total - 1 - i;
+
+    pill.textContent = `Act ${pad(i+1)} · ${title}`;
+
+    if (remaining === 0) {
+      tag.innerHTML = '<strong>Final Act</strong>greenlight the film';
+    } else if (remaining === 1) {
+      tag.innerHTML = `<strong>Act ${pad(i+1)} of ${pad(total)}</strong>one act to greenlight`;
+    } else {
+      tag.innerHTML = `<strong>Act ${pad(i+1)} of ${pad(total)}</strong>${numberWords[remaining]} acts to greenlight`;
+    }
+
+    stepDots.forEach((dot, idx) => {
+      dot.classList.remove('active', 'passed');
+      if (idx < i) dot.classList.add('passed');
+      else if (idx === i) dot.classList.add('active');
+    });
+
+    prevBtn.disabled = (i === 0);
+    if (i === total - 1) {
+      nextBtn.style.display = 'none';
+    } else {
+      nextBtn.style.display = '';
+      nextBtn.innerHTML = `Next: ${scenes[i + 1].dataset.title || ''} <span class="nav-btn-arrow">→</span>`;
+    }
+  }
+
+  // Ten tick marks per season, forty across the year
+  document.querySelectorAll('.ticks').forEach(row => {
+    for (let k = 0; k < 10; k++) row.appendChild(document.createElement('i'));
+  });
+
+  // The looping film: sharper file for large or high-density screens, loaded after the page
+  const loopFilm = document.getElementById('loopFilm');
+  function ensureFilmSource() {
+    if (loopFilm.getAttribute('src')) return;
+    const wide = window.innerWidth * (window.devicePixelRatio || 1) > 1700;
+    loopFilm.preload = 'auto';
+    loopFilm.src = wide ? loopFilm.dataset.srcHd : loopFilm.dataset.srcSd;
+  }
+  window.addEventListener('load', () => setTimeout(ensureFilmSource, 400));
+
+  function syncFilm(i) {
+    if (scenes[i].contains(loopFilm) && !reduceMotion) {
+      ensureFilmSource();
+      loopFilm.muted = true;
+      const p = loopFilm.play();
+      if (p && p.catch) p.catch(() => {});
+    } else {
+      loopFilm.pause();
+    }
+  }
+
+  function goTo(i) {
+    if (i < 0 || i >= total || i === current) return;
+    scenes[current].classList.remove('active');
+    scenes[i].classList.add('active');
+    scenes[i].scrollTop = 0;
+    current = i;
+    updateChrome(i);
+    syncFilm(i);
+  }
+
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  stepDots.forEach((dot, idx) => dot.addEventListener('click', () => goTo(idx)));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') goTo(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'PageUp')   goTo(current - 1);
+  });
+
+  let touchStartX = null;
+  let touchStartY = null;
+  document.addEventListener('touchstart', (e) => {
+    if (e.target.closest('textarea, input, button, label')) return;
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    const dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > 80 && Math.abs(dx) > Math.abs(dy) * 2) {
+      if (dx < 0) goTo(current + 1);
+      else goTo(current - 1);
+    }
+    touchStartX = null;
+    touchStartY = null;
+  }, { passive: true });
+
+  // Keep the last line of every act clear of the bottom bar
+  function syncScenePadding() {
+    const h = bottombar.offsetHeight;
+    const extra = window.innerWidth <= 700 ? 20 : 32;
+    document.documentElement.style.setProperty('--scene-pad-bottom', `${Math.max(h + extra, 160)}px`);
+  }
+  syncScenePadding();
+  window.addEventListener('resize', syncScenePadding);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncScenePadding);
+  else setTimeout(syncScenePadding, 300);
+
+  updateChrome(0);
+
+  // Deep links: #act-2 and #act-3 open on that act
+  const deepLink = location.hash.match(/^#act-([1-3])$/);
+  if (deepLink) goTo(Number(deepLink[1]) - 1);
+
+  // Closing screen: black, Jay in profile, then the thank-you
+  const closing = document.getElementById('closing');
+  function playClosingScreen() {
+    loopFilm.pause();
+    closing.classList.add('visible');
+  }
+
+  // Greenlight
+  const FORMSPREE_ID = 'mzdqwzzn';
+  const signBtn = document.getElementById('signBtn');
+  const PROJECT = 'Four-season documentary · £30,000';
+  const MESSAGE = "Jay Worthy has greenlighted the four-season documentary (£30,000, paid £7,500 a quarter). Send the first quarter's invoice.";
+
+  // If the endpoint is unset or the POST fails, fall back to a prefilled email so a
+  // greenlight is never silently lost.
+  function greenlightFallback() {
+    const subject = encodeURIComponent('Greenlight · Jay Worthy · ' + PROJECT);
+    const body = encodeURIComponent(MESSAGE);
+    window.location.href = 'mailto:charlie@tillettfilm.com?subject=' + subject + '&body=' + body;
+  }
+
+  signBtn.addEventListener('click', () => {
+    if (signBtn.disabled) return;
+    signBtn.disabled = true;
+    playClosingScreen();
+
+    if (!/^[a-z0-9]{6,}$/i.test(FORMSPREE_ID)) { greenlightFallback(); return; }
+    fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        subject: 'Jay Worthy · Greenlight · ' + PROJECT,
+        message: MESSAGE,
+        project: PROJECT
+      })
+    }).then(r => { if (!r.ok) greenlightFallback(); })
+      .catch(greenlightFallback);
+  });
+</script>
+
+</body>
+</html>
